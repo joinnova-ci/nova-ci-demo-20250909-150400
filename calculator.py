@@ -1,4 +1,5 @@
 """Calculator module with comprehensive math functions."""
+from math import sqrt
 
 def add(a, b):
     """Add two numbers."""
@@ -24,6 +25,8 @@ def power(a, b):
 
 def modulo(a, b):
     """Get remainder of a divided by b."""
+    if b == 0:
+        raise ValueError("Modulo by zero")
     return a % b
 
 def absolute(a):
@@ -34,7 +37,7 @@ def square_root(a):
     """Get square root of a positive number."""
     if a < 0:
         raise ValueError("Cannot compute square root of negative number")
-    return a ** 0.5
+    return sqrt(a)
 
 def factorial(n):
     """Calculate factorial of a non-negative integer."""
@@ -43,7 +46,7 @@ def factorial(n):
     if n == 0:
         return 1
     result = 1
-    for i in range(1, n + 1):
+    for i in range(2, n + 1):
         result *= i
     return result
 
